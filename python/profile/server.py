@@ -1,5 +1,5 @@
 from flask_app import app
-from flask_app.controllers import users, login_reg_controller
+from flask_app.controllers import maincontroller
 
 
 if __name__=="__main__":
