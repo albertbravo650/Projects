@@ -25,9 +25,9 @@ class User:
     @classmethod
     def save(cls, data):
         query = '''INSERT INTO users 
-        ( first_name,  last_name, email, 
+        ( firstName,  lastName, email, 
         password, created_at, updated_at ) 
-        VALUES ( %(first_name)s , %(last_name)s, 
+        VALUES ( %(firstName)s , %(lastName)s, 
         %(email)s, %(password)s, NOW() , NOW() );'''
         # data is a dictionary that will be passed into the save method from server.py
         return connectToMySQL(mydb).query_db( query, data )
