@@ -71,24 +71,24 @@ class User:
         is_valid = True # we assume this is true
 
         # First Name Validations
-        if len(user['first_name']) < 1:
+        if len(user['firstName']) < 1:
             flash("Please Enter First Name.", 'regError')
             is_valid = False
-        elif len(user['first_name']) < 2:
+        elif len(user['firstName']) < 2:
             flash("First Name must be at least 2 characters.", 'regError')
             is_valid = False
-        elif not NAME_REGEX.match(user['first_name']):
+        elif not NAME_REGEX.match(user['firstName']):
             flash("First name requires letters only", 'regError')
             is_valid = False
 
         # Last Name Validations
-        if len(user['last_name']) < 1:
+        if len(user['lastName']) < 1:
             flash("Please Enter Last Name.", 'regError')
             is_valid = False    
-        elif len(user['last_name']) < 2:
+        elif len(user['lastName']) < 2:
             flash("Last Name must be at least 2 characters.", 'regError')
             is_valid = False
-        elif not NAME_REGEX.match(user['last_name']):
+        elif not NAME_REGEX.match(user['lastName']):
             flash("Last name requires letters only", 'regError')
             is_valid = False
 
