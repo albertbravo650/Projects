@@ -8,34 +8,26 @@ bcrypt = Bcrypt(app)
 
 @app.route('/')
 def index():
-
     return render_template('login_reg.html')
 
 @app.route('/register/user', methods=['post'])
 def register():
     if not User.validate_registration(request.form):
-
         return redirect('/')
-
     pw_hash = bcrypt.generate_password_hash(request.form['password'])
-
     data = {
-        "first_name" : request.form['first_name'],
-        "last_name" : request.form['last_name'],
+        "firstName" : request.form['firstName'],
+        "lastName" : request.form['lastName'],
         "email" : request.form['email'],
         "password" : pw_hash
     }
-
     session['user_id'] = User.save(data)
-
     return redirect('/dashboard')
 
 @app.route('/login', methods=['post'])
 def login():
-    
     data = { "email" : request.form["email"] }
     user_in_db = User.get_by_email(data)
-
     if not user_in_db:
         flash("Invalid Email/Password", 'loginError')
         return redirect('/')
@@ -51,7 +43,5 @@ def login():
 
 @app.route('/logout')
 def logout():
-
     session.clear()
-
     return redirect('/')
