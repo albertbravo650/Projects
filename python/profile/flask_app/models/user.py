@@ -43,6 +43,7 @@ class User:
         query = "SELECT * FROM users WHERE email = %(email)s;"
         result = connectToMySQL(mydb).query_db(query,data)
         # Didn't find a matching user
+        # print("testinggg", result, len(result))
         if len(result) < 1:
             return False
         return cls(result[0])
