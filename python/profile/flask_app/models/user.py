@@ -39,7 +39,7 @@ class User:
         return cls(results[0])
 
     @classmethod
-    def get_by_email(cls,data):
+    def getByEmail(cls,data):
         query = "SELECT * FROM users WHERE email = %(email)s;"
         result = connectToMySQL(mydb).query_db(query,data)
         # Didn't find a matching user
@@ -64,9 +64,8 @@ class User:
     #     return players_user
 
     @staticmethod
-    def validate_registration(user):
+    def validateRegistration(user):
         is_valid = True # we assume this is true
-
         # First Name Validations
         if len(user['firstName']) < 1:
             flash("Please Enter First Name.", 'regError')
@@ -77,7 +76,6 @@ class User:
         elif not NAME_REGEX.match(user['firstName']):
             flash("First name requires letters only", 'regError')
             is_valid = False
-
         # Last Name Validations
         if len(user['lastName']) < 1:
             flash("Please Enter Last Name.", 'regError')
@@ -88,7 +86,6 @@ class User:
         elif not NAME_REGEX.match(user['lastName']):
             flash("Last name requires letters only", 'regError')
             is_valid = False
-
         # Email Validations
         if len(user['email']) < 1:
             flash("Please Enter An Email Address", 'regError')
@@ -96,7 +93,6 @@ class User:
         elif not EMAIL_REGEX.match(user['email']): 
             flash("Invalid email address!", 'regError')
             is_valid = False
-
         # Password Validation
         if len (user['password']) < 8:
             flash("Password must be at least 8 characters.", 'regError')
