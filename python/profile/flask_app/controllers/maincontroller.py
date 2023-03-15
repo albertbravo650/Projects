@@ -12,7 +12,7 @@ def index():
 
 @app.route('/register/user', methods=['post'])
 def register():
-    if not User.validate_registration(request.form):
+    if not User.validateRegistration(request.form):
         return redirect('/')
     pw_hash = bcrypt.generate_password_hash(request.form['password'])
     data = {
@@ -27,7 +27,7 @@ def register():
 @app.route('/login', methods=['post'])
 def login():
     data = { "email" : request.form["email"] }
-    user_in_db = User.get_by_email(data)
+    user_in_db = User.getByEmail(data)
     if not user_in_db:
         flash("Invalid Email/Password", 'loginError')
         return redirect('/')
