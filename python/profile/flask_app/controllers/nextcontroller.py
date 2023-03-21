@@ -1,7 +1,7 @@
 from flask_app.models.user import User
-# from flask_app.models import player
+from flask_app.models import comment
 from flask_app import app
-from flask import render_template,redirect,request,session,flash
+from flask import render_template, redirect, request, session, flash
 
 @app.route('/dashboard')
 def dashboard():

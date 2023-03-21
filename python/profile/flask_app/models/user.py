@@ -25,7 +25,7 @@ class User:
     def save(cls, data):
         query = '''INSERT INTO users 
         ( firstName,  lastName, email, 
-        password, created_at, updated_at ) 
+        password, createdAt, updatedAt ) 
         VALUES ( %(firstName)s , %(lastName)s, 
         %(email)s, %(password)s, NOW() , NOW() );'''
         # data is a dictionary that will be passed into the save method from server.py
@@ -98,10 +98,10 @@ class User:
         if len (user['password']) < 8:
             flash("Password must be at least 8 characters.", 'regError')
             is_valid = False
-        if len (user['confirm_password']) < 1:
+        if len (user['confirmPassword']) < 1:
             flash("Please Confirm Your Password.", 'regError')
             is_valid = False
-        elif (user['password'])!= (user['confirm_password']):
+        elif (user['password'])!= (user['confirmPassword']):
             flash("Passwords Do Not Match.", 'regError')
             is_valid = False
         return is_valid
