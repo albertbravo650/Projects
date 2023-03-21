@@ -1,6 +1,5 @@
 from flask_app.config.mysqlconnection import connectToMySQL
 from flask import flash
-import re
 
 mydb = 'profile_app'
 
@@ -15,7 +14,7 @@ class Comment:
     @classmethod
     def save(cls, data):
         query = '''INSERT INTO comments 
-        ( text,  textLink, created_at, updated_at ) 
+        ( text,  textLink, createdAt, updatedAt ) 
         VALUES ( %(text)s , %(textLink)s, NOW() , NOW() );'''
         return connectToMySQL(mydb).query_db( query, data )
 
