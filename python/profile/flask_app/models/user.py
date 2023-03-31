@@ -67,6 +67,11 @@ class User:
     @staticmethod
     def validateRegistration(user):
         is_valid = True # we assume this is true
+        query = "SELECT * FROM users WHERE email = %(email)s;"
+        results = connectToMySQL(mydb).query_db(query, user)
+        if len(results) >= 1:
+            flash("Email already in use", 'regError')
+            is_valid = False
         # First Name Validations
         if len(user['firstName']) < 1:
             flash("Please Enter First Name.", 'regError')
