@@ -14,6 +14,12 @@ def dashboard():
     # return render_template('dashboard.html', user=User.getById(data), users_players=users_players)
     return render_template('home.html', user=User.getById(data))
 
+@app.route('/settings')
+def settings():
+    if 'user_id' not in session:
+        return redirect('/')
+    return render_template('settings.html')
+
 # @app.route('/add')
 # def new_player():
 #     if 'user_id' not in session:
