@@ -20,14 +20,14 @@ def settings():
         return redirect('/')
     return render_template('settings.html')
 
-# @app.route('/add')
-# def new_player():
-#     if 'user_id' not in session:
-#         return redirect('/')
-#     data = {
-#         'id': session['user_id']
-#     }
-#     return render_template('add.html',  user = User.getById(data))
+@app.route('/add')
+def new_comment():
+    if 'user_id' not in session:
+        return redirect('/')
+    data = {
+        'id': session['user_id']
+    }
+    return render_template('add.html',  user = User.getById(data))
 
 # @app.route('/add_player', methods=["POST"])
 # def add_player():
