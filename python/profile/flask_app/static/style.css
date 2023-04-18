@@ -27,3 +27,19 @@ a {
 .btn {
     padding: 5px;
 }
+
+.main {
+    border: 2px solid red;
+    height: 800px;
+    display: flex;
+}
+
+.leftside {
+    border: 2px solid yellow;
+    flex: 1;
+}
+
+.rightside {
+    border: 2px solid purple;
+    flex: 3;
+}
