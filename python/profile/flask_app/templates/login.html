@@ -10,63 +10,70 @@
     <title>Profile Project</title>
 </head>
 <body>
-    <div class="loginWrapper">
-        <div class="topBar">
-            <h1 class="loginh1">Profile Website</h1>
-        </div>
-        <div class="login rounded col-5 mx-auto">
-            <h1 id="login">Login</h1>
-            <form action="/login" method="post">
-                {% with messages = get_flashed_messages(category_filter=['loginError']) %}
-                        {% if messages %}
-                            {% for message in messages %}
-                                <p>{{message}}</p>
-                            {% endfor %}
-                        {% endif %}
-                    {% endwith %}
-
-                <label class="form-label" for="email">Email:</label>
-                <input class="form-control" type="text" name="email">
-
-                <label class="form-label" for="password">Password:</label>
-                <input class="form-control" type="password" name="password">
-                <div class="buttons">
-                    <input class="btn btn-success" type="submit" value="Login">
-                </div>
-            </form>
-        </div>
-        <div class="register rounded col-5 mx-auto">
-            <h1 id="register">Register</h1>
-            <div>
-                <form action="/register/user" method="post">
-                    {% with messages = get_flashed_messages(category_filter=['regError']) %}
-                        {% if messages %}
-                            {% for message in messages %}
-                                <p>{{message}}</p>
-                            {% endfor %}
-                        {% endif %}
-                    {% endwith %}
-                    <label class="form-label" for="firstName">First Name:</label>
-                    <input class="form-control" type="text" name="firstName">
-
-                    <label class="form-label" for="lastName">Last Name:</label>
-                    <input class="form-control" type="text" name="lastName">
-
+    <div class="topBar">
+        <h1 class="loginh1">Profile Website</h1>
+    </div>
+    <div class="main">
+        <div class="leftside">
+            <div class="login rounded col-5 mx-auto">
+                <h1 id="login">Login</h1>
+                <form action="/login" method="post">
+                    {% with messages = get_flashed_messages(category_filter=['loginError']) %}
+                            {% if messages %}
+                                {% for message in messages %}
+                                    <p>{{message}}</p>
+                                {% endfor %}
+                            {% endif %}
+                        {% endwith %}
+    
                     <label class="form-label" for="email">Email:</label>
                     <input class="form-control" type="text" name="email">
-
+    
                     <label class="form-label" for="password">Password:</label>
                     <input class="form-control" type="password" name="password">
-
-                    <label class="form-label" for="password">Confirm Password:</label>
-                    <input class="form-control" type="password" name="confirmPassword">
                     <div class="buttons">
-                        <input class="btn btn-primary" type="submit" value="Register">
+                        <input class="btn btn-success" type="submit" value="Login">
                     </div>
                 </form>
             </div>
+            <div class="register rounded col-5 mx-auto">
+                <h1 id="register">Register</h1>
+                <div>
+                    <form action="/register/user" method="post">
+                        {% with messages = get_flashed_messages(category_filter=['regError']) %}
+                            {% if messages %}
+                                {% for message in messages %}
+                                    <p>{{message}}</p>
+                                {% endfor %}
+                            {% endif %}
+                        {% endwith %}
+                        <label class="form-label" for="firstName">First Name:</label>
+                        <input class="form-control" type="text" name="firstName">
+    
+                        <label class="form-label" for="lastName">Last Name:</label>
+                        <input class="form-control" type="text" name="lastName">
+    
+                        <label class="form-label" for="email">Email:</label>
+                        <input class="form-control" type="text" name="email">
+    
+                        <label class="form-label" for="password">Password:</label>
+                        <input class="form-control" type="password" name="password">
+    
+                        <label class="form-label" for="password">Confirm Password:</label>
+                        <input class="form-control" type="password" name="confirmPassword">
+                        <div class="buttons">
+                            <input class="btn btn-primary" type="submit" value="Register">
+                        </div>
+                    </form>
+                </div>
+            </div>
         </div>
-        
+        <div class="rightside">
+            
+        </div>
     </div>
+    
+        
+        
 </body>
 </html>

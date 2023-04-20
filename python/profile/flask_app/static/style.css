@@ -13,14 +13,13 @@ body {
     justify-content: center;
     padding: 5px 10px 5px 10px;
     background-color: black;
-    margin-bottom: 10px;
 }
 
 h1 {
     color: white;
 }
 
-.login, .register {
+.register {
     margin-top: 20px;
 }
 
@@ -37,4 +36,22 @@ a {
 label {
     color: green;
     margin-top: 10px;
+}
+
+.main {
+    border: 2px solid red;
+    display: flex;
+}
+
+.leftside {
+    border: 2px solid yellow;
+    flex: 1;
+    padding: 20px;
+    text-align: center;
+}
+
+.rightside {
+    border: 2px solid purple;
+    flex: 3;
+    padding: 20px;
 }

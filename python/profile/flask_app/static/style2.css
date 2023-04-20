@@ -37,9 +37,11 @@ a {
 .leftside {
     border: 2px solid yellow;
     flex: 1;
+    padding: 20px;
 }
 
 .rightside {
     border: 2px solid purple;
     flex: 3;
+    padding: 20px;
 }
