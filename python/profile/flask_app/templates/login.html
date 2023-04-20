@@ -11,6 +11,9 @@
 </head>
 <body>
     <div class="loginWrapper">
+        <div class="topBar">
+            <h1 class="loginh1">Profile Website</h1>
+        </div>
         <div class="login rounded col-5 mx-auto">
             <h1 id="login">Login</h1>
             <form action="/login" method="post">
@@ -33,7 +36,7 @@
             </form>
         </div>
         <div class="register rounded col-5 mx-auto">
-            <h1>Register</h1>
+            <h1 id="register">Register</h1>
             <div>
                 <form action="/register/user" method="post">
                     {% with messages = get_flashed_messages(category_filter=['regError']) %}

@@ -10,18 +10,13 @@ body {
 .topBar {
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     padding: 5px 10px 5px 10px;
     background-color: black;
-    margin-bottom: 10px;
 }
 
 h1 {
     color: white;
-}
-
-.login, .register {
-    margin-top: 20px;
 }
 
 a {
@@ -31,10 +26,20 @@ a {
 
 .btn {
     padding: 5px;
-    margin-top: 10px;
 }
 
-label {
-    color: green;
-    margin-top: 10px;
+.main {
+    border: 2px solid red;
+    height: 800px;
+    display: flex;
+}
+
+.leftside {
+    border: 2px solid yellow;
+    flex: 1;
+}
+
+.rightside {
+    border: 2px solid purple;
+    flex: 3;
 }
