@@ -24,3 +24,16 @@ class Comment:
         results = connectToMySQL(mydb).query_db( query, data )
         print(results)
         return cls(results[0])
+    
+    @staticmethod
+    def validateComment(comment):
+        is_valid = True # we assume this is true
+        # query = "SELECT * FROM comments WHERE email = %(email)s;"
+        # results = connectToMySQL(mydb).query_db(query, comment)
+        if len (comment['text']) < 1:
+            flash("Cannot be blank", 'commentError')
+            is_valid = False
+        if len (comment['textLink']) < 1:
+            flash("Cannot be blank", 'commentError')
+            is_valid = False
+        return is_valid
