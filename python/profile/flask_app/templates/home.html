@@ -27,8 +27,21 @@
         </div>
         <div class="rightside">
             <div class="commentForm">
-                <form action="/">
-
+                <form action="/addComment" method="post">
+                    {% with messages = get_flashed_messages(category_filter=['commentError']) %}
+                        {% if messages %}
+                            {% for message in messages %}
+                                <p>{{message}}</p>
+                            {% endfor %}
+                        {% endif %}
+                    {% endwith %}
+                    <label class="form-label" for="text">Comment:</label>
+                    <input class="form-control" type="text" name="text">
+                    <label class="form-label" for="textLink">Add a Link?</label>
+                    <input class="form-control" type="text" name="textLink">
+                    <div class="buttons">
+                        <input class="btn btn-success" type="submit" value="add comment">
+                    </div>
                 </form>
             </div>
             <div class="comments">

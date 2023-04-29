@@ -20,30 +20,28 @@ def settings():
         return redirect('/')
     return render_template('settings.html')
 
-@app.route('/add')
-def new_comment():
-    if 'user_id' not in session:
-        return redirect('/')
-    data = {
-        'id': session['user_id']
-    }
-    return render_template('add.html',  user = User.getById(data))
-
-# @app.route('/add_player', methods=["POST"])
-# def add_player():
+# @app.route('/settings')
+# def new_comment():
 #     if 'user_id' not in session:
 #         return redirect('/')
-#     if not player.Player.validate_player(request.form):
-#         return redirect('/add')
 #     data = {
-#         "name" : request.form["name"],
-#         "age" : request.form["age"],
-#         "image" : request.form["image"],
-#         "gender" : request.form["gender"],
-#         "users_id": session["user_id"]
+#         'id': session['user_id']
 #     }
-#     player.Player.save(data)
-#     return redirect('/dashboard')
+#     return render_template('settings.html',  user = User.getById(data))
+
+@app.route('/addComment', methods=["POST"])
+def addComment():
+    if 'user_id' not in session:
+        return redirect('/')
+    if not comment.Comment.validateComment(request.form):
+        return redirect('/dashboard')
+    data = {
+        "text" : request.form["text"],
+        "textLink" : request.form["textLink"],
+        "users_id": session["user_id"]
+    }
+    comment.Comment.save(data)
+    return redirect('/dashboard')
 
 # @app.route("/edit/<int:id>")
 # def edit(id):
