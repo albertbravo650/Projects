@@ -55,3 +55,7 @@ label {
     flex: 3;
     padding: 20px;
 }
+
+.bottomBar {
+    display: flex;
+}
