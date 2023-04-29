@@ -33,7 +33,4 @@ class Comment:
         if len (comment['text']) < 1:
             flash("Cannot be blank", 'commentError')
             is_valid = False
-        if len (comment['textLink']) < 1:
-            flash("Cannot be blank", 'commentError')
-            is_valid = False
         return is_valid
