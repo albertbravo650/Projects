@@ -5,6 +5,7 @@ from flask_app.models import comment
 
 @app.route('/dashboard')
 def dashboard():
+    # print("hellooooo", session['user_id'])
     if 'user_id' not in session:
         return redirect('/')
     data = {
@@ -31,6 +32,7 @@ def settings():
 
 @app.route('/addComment', methods=["POST"])
 def addComment():
+    print("hellooooo", session['user_id'])
     if 'user_id' not in session:
         return redirect('/')
     if not comment.Comment.validateComment(request.form):
@@ -38,8 +40,9 @@ def addComment():
     data = {
         "text" : request.form["text"],
         "textLink" : request.form["textLink"],
-        "users_id": session["user_id"]
+        "user_id" : session["user_id"]
     }
+    print("helloo", data)
     comment.Comment.save(data)
     return redirect('/dashboard')
 

@@ -14,8 +14,8 @@ class Comment:
     @classmethod
     def save(cls, data):
         query = '''INSERT INTO comments 
-        ( text,  textLink, createdAt, updatedAt ) 
-        VALUES ( %(text)s , %(textLink)s, NOW() , NOW() );'''
+        ( text,  textLink, createdAt, updatedAt, user_id ) 
+        VALUES ( %(text)s , %(textLink)s, NOW() , NOW(), %(user_id)s );'''
         return connectToMySQL(mydb).query_db( query, data )
 
     @classmethod
