@@ -45,6 +45,18 @@
                 </form>
             </div>
             <div class="comments">
+                {% for comment in all_comments %}
+                        {% if id == comment.user_id %}
+                            <div>
+                                <h3>user comment: {{comment.text}}, {{comment.textLink}}</h3>
+                            </div>
+                        {% endif %}
+                        {% if id != comment.user_id %}
+                        <div>
+                            <h3>non_user comment: {{comment.text}}, {{comment.textLink}}</h3>
+                        </div>
+                        {% endif %}
+                    {% endfor %}
             </div>
         </div>
     </div>
