@@ -11,9 +11,9 @@ def dashboard():
     data = {
         'id': session['user_id']
     }
-    # users_players = User.get_user_with_players(data)
+    all_comments = comment.Comment.get_all_comments()
     # return render_template('dashboard.html', user=User.getById(data), users_players=users_players)
-    return render_template('home.html', user=User.getById(data))
+    return render_template('home.html', user=User.getById(data), all_comments=all_comments)
 
 @app.route('/settings')
 def settings():

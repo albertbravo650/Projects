@@ -34,3 +34,12 @@ class Comment:
             flash("Cannot be blank", 'commentError')
             is_valid = False
         return is_valid
+    
+    @classmethod
+    def get_all_comments(cls):
+        query = "SELECT * FROM comments;"
+        results = connectToMySQL(mydb).query_db(query)
+        comments = []
+        for comment in results:
+            comments.append(cls(comment))
+        return comments
