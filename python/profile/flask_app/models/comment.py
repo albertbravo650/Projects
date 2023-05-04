@@ -37,9 +37,24 @@ class Comment:
     
     @classmethod
     def get_all_comments(cls):
-        query = "SELECT * FROM comments;"
+        query = "SELECT * FROM comments LEFT JOIN users ON ;"
         results = connectToMySQL(mydb).query_db(query)
         comments = []
         for comment in results:
             comments.append(cls(comment))
         return comments
+    
+    @classmethod
+    def get_users_with_comments(cls):
+        query = "SELECT * FROM users LEFT JOIN comments ON comments.user_id = users.id;"
+        results = connectToMySQL(mydb).query_db( query )
+        users_comments = []
+        for row_from_db in results:
+            data = {
+                "text" : row_from_db['text'],
+                "textLink" : row_from_db['textLink'],
+                "comment_id" : row_from_db["comments.id"],
+                "user_id" : row_from_db["id"]
+            }
+            users_comments.append(data)
+        return users_comments
