@@ -46,14 +46,14 @@
             </div>
             <div class="comments">
                 {% for comment in all_comments %}
-                        {% if user.id == user_id %}
+                        {% if user.id == comment.user_id %}
                             <div>
-                                <h3>user comment: {{comment.text}}, {{comment.textLink}}{{user.id}},{{comment.user_id}}</h3>
+                                <h3>user comment: {{comment.text}}, {{comment.textLink}}</h3>
                             </div>
                         {% endif %}
-                        {% if user.id != user_id %}
+                        {% if user.id != comment.user_id %}
                         <div>
-                            <h3>non_user comment: {{comment.text}}, {{comment.textLink}}{{user.id}},{{comment.user_id}}</h3>
+                            <h3>non_user comment: {{comment.text}}, {{comment.textLink}}</h3>
                         </div>
                         {% endif %}
                     {% endfor %}

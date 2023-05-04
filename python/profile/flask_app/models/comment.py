@@ -46,7 +46,7 @@ class Comment:
     
     @classmethod
     def get_users_with_comments(cls):
-        query = "SELECT * FROM users LEFT JOIN comments ON comments.user_id = users.id;"
+        query = "SELECT * FROM users LEFT JOIN comments ON comments.user_id = users.id ORDER BY comments.createdAt DESC;"
         results = connectToMySQL(mydb).query_db( query )
         users_comments = []
         for row_from_db in results:
