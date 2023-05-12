@@ -49,3 +49,7 @@ a {
 .bottomBar {
     display: flex;
 }
+
+.userImg {
+    border-radius: 50%;
+}
