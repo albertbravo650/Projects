@@ -30,7 +30,7 @@
                 </div>
             </div>
             <div class="bottomLeft">
-                <h3>Following</h3>
+                <h3 style="text-align: center;">Following</h3>
             </div>
         </div>
         <div class="rightside">
@@ -58,8 +58,9 @@
                 </div>
                 {% for comment in all_comments %}
                         {% if user.id == comment.user_id %}
-                            <div>
+                            <div class="userComments">
                                 <h3>user comment: {{comment.text}}, {{comment.textLink}}</h3>
+                                <button>delete</button>
                             </div>
                         {% endif %}
                         {% if user.id != comment.user_id %}

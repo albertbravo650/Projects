@@ -54,14 +54,19 @@ a {
 }
 
 .bottomLeft {
-    border: 2px solid white;
-    height: 100%;
+    border: 2px solid green;
+    background-color: white;
+    height: 70%;
 }
 
 .rightside {
     border: 2px solid purple;
     flex: 3;
     padding: 20px;
+}
+
+.userComments {
+    display: flex;
 }
 
 .bottomBar {
