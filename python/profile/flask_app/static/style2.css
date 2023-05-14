@@ -48,6 +48,7 @@ a {
 
 .bottomBar {
     display: flex;
+    justify-content: center;
 }
 
 .userImg {
