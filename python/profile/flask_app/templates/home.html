@@ -17,15 +17,20 @@
     </div>
     <div class="main">
         <div class="leftside">
-            <div class="userDetails">
-                <h3>{{user.firstName}} {{user.lastName}}</h3>
-                <div class="profileImg">
-                    <img class="userImg" src="/static/assets/avatar.jpeg" alt="image_error" width="100" height="100">
+            <div class="topLeft">
+                <div class="userDetails">
+                    <h3>{{user.firstName}} {{user.lastName}}</h3>
+                    <div class="profileImg">
+                        <img class="userImg" src="/static/assets/avatar.jpeg" alt="image_error" width="100" height="100">
+                    </div>
+                    <button>edit profile</button>
                 </div>
-                <button>edit profile</button>
+                <div class="bio">
+                    <p>This is your bio...</p>
+                </div>
             </div>
-            <div class="bio">
-                <p>This is your bio</p>
+            <div class="bottomLeft">
+                <h3>Following</h3>
             </div>
         </div>
         <div class="rightside">

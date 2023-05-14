@@ -40,6 +40,24 @@ a {
     padding: 20px;
 }
 
+.topLeft {
+    display: flex;
+    align-items: center;
+}
+
+.userDetails {
+    text-align: center;
+}
+
+.userImg {
+    border-radius: 50%;
+}
+
+.bottomLeft {
+    border: 2px solid white;
+    height: 100%;
+}
+
 .rightside {
     border: 2px solid purple;
     flex: 3;
@@ -49,8 +67,4 @@ a {
 .bottomBar {
     display: flex;
     justify-content: center;
-}
-
-.userImg {
-    border-radius: 50%;
 }
