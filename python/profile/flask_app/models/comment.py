@@ -58,3 +58,8 @@ class Comment:
             }
             users_comments.append(data)
         return users_comments
+    
+    @classmethod
+    def destroy(cls, data):
+        query = "DELETE FROM comments WHERE id = %(id)s;"
+        return connectToMySQL(mydb).query_db(query, data)

@@ -69,15 +69,15 @@ def addComment():
 #     player.Player.update(request.form)
 #     return redirect('/dashboard')
 
-# @app.route('/destroy/<int:id>')
-# def destroy(id):
-#     if 'user_id' not in session:
-#         return redirect('/')
-#     data = {
-#         "id":id
-#     }
-#     player.Player.destroy(data)
-#     return redirect('/dashboard')
+@app.route('/destroy/<int:id>')
+def destroy(id):
+    if 'user_id' not in session:
+        return redirect('/')
+    data = {
+        "id":id
+    }
+    comment.Comment.destroy(data)
+    return redirect('/dashboard')
 
 # @app.route('/green')
 # def run():
