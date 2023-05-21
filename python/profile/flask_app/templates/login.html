@@ -69,7 +69,18 @@
             </div>
         </div>
         <div class="rightside">
-            
+            <h2>See what people are saying...</h2>
+            <div class="comments">
+                {% for comment in all_comments %}
+                    {% if comment.text == None %}
+                        <div></div>
+                    {% else %}
+                        <div>
+                            <h3>non_user comment: {{comment.text}}, {{comment.textLink}}</h3>
+                        </div>
+                    {% endif %}
+                {% endfor %}
+            </div>
         </div>
     </div>
     <div class="bottomBar">
