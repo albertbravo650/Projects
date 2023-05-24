@@ -53,6 +53,11 @@ a {
     border-radius: 50%;
 }
 
+#edit_profile_button {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
 .bottomLeft {
     border: 2px solid green;
     background-color: white;
@@ -65,8 +70,10 @@ a {
     padding: 20px;
 }
 
-.userComments {
+.comments {
     display: flex;
+    align-items: center;
+    margin-top: 15px;
 }
 
 .bottomBar {

@@ -23,7 +23,7 @@
                     <div class="profileImg">
                         <img class="userImg" src="/static/assets/avatar.jpeg" alt="image_error" width="100" height="100">
                     </div>
-                    <button>edit profile</button>
+                    <button id="edit_profile_button">edit profile</button>
                 </div>
                 <div class="bio">
                     <p>This is your bio...</p>
@@ -52,19 +52,19 @@
                     </div>
                 </form>
             </div>
-            <div class="comments">
+            <div class="commentsBox">
                 {% for comment in all_comments %}
                     {% if comment.text == None %}
-                        <div>
+                        <div class="comments">
                             
                         </div>
                     {% elif user.id == comment.user_id %}
-                        <div class="userComments">
+                        <div class="comments">
                             <h3>user comment: {{comment.text}}, {{comment.textLink}}</h3>
                             <a class="btn btn-danger" href="/destroy/{{comment.comment_id}}">delete</a>
                         </div>
                     {% elif user.id != comment.user_id %}
-                        <div>
+                        <div class="comments">
                             <h3>non_user comment: {{comment.text}}, {{comment.textLink}}</h3>
                         </div>
                     {% endif %}
