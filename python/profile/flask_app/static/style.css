@@ -39,19 +39,19 @@ label {
 }
 
 .main {
-    border: 2px solid red;
+    /* border: 2px solid red; */
     display: flex;
 }
 
 .leftside {
-    border: 2px solid yellow;
+    /* border: 2px solid yellow; */
     flex: 1;
     padding: 20px;
     text-align: center;
 }
 
 .rightside {
-    border: 2px solid purple;
+    /* border: 2px solid purple; */
     flex: 3;
     padding: 20px;
 }
