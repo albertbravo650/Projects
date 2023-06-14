@@ -13,7 +13,7 @@ def dashboard():
     }
     # all_comments = comment.Comment.get_all_comments()
     all_comments = comment.Comment.get_users_with_comments()
-    print("testingg", all_comments)
+    # print("testingg", all_comments)
     # return render_template('dashboard.html', user=User.getById(data), users_players=users_players)
     return render_template('home.html', user=User.getById(data), all_comments=all_comments)
 
