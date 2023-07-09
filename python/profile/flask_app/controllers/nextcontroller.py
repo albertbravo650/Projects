@@ -48,18 +48,6 @@ def addComment():
     comment.Comment.save(data)
     return redirect('/dashboard')
 
-# @app.route("/edit/<int:id>")
-# def edit(id):
-#     if 'user_id' not in session:
-#         return redirect('/')
-#     data = {
-#         "id": id
-#     }
-#     print("hi", data)
-#     onePlayer = player.Player.get_one_player(data)
-#     print("testinggg",onePlayer.name)
-#     return render_template("edit.html", onePlayer=onePlayer)
-
 # @app.route('/edit_player', methods=['POST'])
 # def update():
 #     if 'user_id' not in session:
