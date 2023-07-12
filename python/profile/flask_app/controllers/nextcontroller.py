@@ -48,16 +48,6 @@ def addComment():
     comment.Comment.save(data)
     return redirect('/dashboard')
 
-# @app.route('/edit_player', methods=['POST'])
-# def update():
-#     if 'user_id' not in session:
-#         return redirect('/')
-#     id = request.form['id']
-#     if not player.Player.validate_player(request.form):
-#         return redirect(f'/edit/{id}')
-#     player.Player.update(request.form)
-#     return redirect('/dashboard')
-
 @app.route('/destroy/<int:id>')
 def destroy(id):
     if 'user_id' not in session:
