@@ -23,15 +23,6 @@ def settings():
         return redirect('/')
     return render_template('settings.html')
 
-# @app.route('/settings')
-# def new_comment():
-#     if 'user_id' not in session:
-#         return redirect('/')
-#     data = {
-#         'id': session['user_id']
-#     }
-#     return render_template('settings.html',  user = User.getById(data))
-
 @app.route('/addComment', methods=["POST"])
 def addComment():
     print("hellooooo", session['user_id'])
