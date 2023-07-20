@@ -23,6 +23,7 @@ def settings():
         return redirect('/')
     return render_template('settings.html')
 
+# add comment
 @app.route('/addComment', methods=["POST"])
 def addComment():
     print("hellooooo", session['user_id'])
