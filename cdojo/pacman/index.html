@@ -5,48 +5,109 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MyPacman</title>
     <style type="text/css">
+        * {
+            margin: 0;
+        }
+        body {
+            background-color: black;
+        }
         div.row div{
             width: 20px;
             height: 20px;
-            border: 1px solid black;
-            display: inline-block
+            display: inline-block;
+            margin-bottom: -4px;
         }
-        body {
-            margin: 0;
+        div.block {
+            background-color: blue;
+        }
+        div.coin {
+            background-image: url("coinspin.gif");
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: contain;
+        }
+        div#pacman {
+            background-image: url("pacman2.gif");
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: 210%;
+            width: 20px;
+            height: 20px;
+            position: absolute;
         }
     </style>
 </head>
 <body>
-    <div class="row">
-        <div class="block">hi</div>
-        <div class="block">hi</div>
-        <div class="block">hi</div>
-        <div class="block">hi</div>
-        <div class="block">hi</div>
+
+    <div class="container">
+        <div id="world"></div>
+        <div id="pacman" style="top: 20px; left: 20px;"></div>
     </div>
-    <div class="row">
-        <div class="block">hi</div>
-        <div class="coin">hi</div>
-        <div class="coin">hi</div>
-        <div class="coin">hi</div>
-        <div class="block">hi</div>
-    </div>
-    <div class="row">
-        <div class="block">hi</div>
-        <div class="coin">hi</div>
-        <div class="coin">hi</div>
-        <div class="coin">hi</div>
-        <div class="block">hi</div>
-    </div>
-    <div class="row">
-        <div class="block">hi</div>
-        <div class="block">hi</div>
-        <div class="block">hi</div>
-        <div class="block">hi</div>
-        <div class="block">hi</div>
-    </div>
+
+    <script>
+        var world = [
+            [2,2,2,2,2,2,2,2,2,2],
+            [2,1,2,1,1,1,2,1,1,2],
+            [2,1,2,1,1,1,2,1,1,2],
+            [2,1,2,2,2,1,2,1,1,2],
+            [2,1,1,1,1,1,1,1,1,2],
+            [2,1,2,2,2,1,1,1,1,2],
+            [2,1,1,1,1,1,1,1,1,2],
+            [2,2,2,2,2,2,2,2,2,2]
+        ];
+
+        var pacman = {
+            x: 20,
+            y: 20
+        };
+
+        function displayWorld() {
+            var output = '';
+
+            for(var i=0; i<world.length; i++) {
+                output += "\n<div class='row'>\n";
+                for(var j=0; j<world[i].length; j++){
+                    if(world[i][j] == 2) {
+                        output += "<div class='block'></div>";
+                    }
+                    else if(world[i][j] == 1) {
+                        output += "<div class='coin'></div>";
+                    }
+                    else if(world[i][j] == 0) {
+                        output += "<div class='empty'></div>";
+                    }
+                }
+                output += "\n</div>";
+            }
+            // console.log(output);
+            document.getElementById('world').innerHTML = output;
+        }
+
+        function displayPacman() {
+            document.getElementById('pacman').style.top = pacman.y+"px";
+            document.getElementById('pacman').style.left = pacman.x+"px";
+        }
+
+        displayWorld();
+        displayPacman();
+
+        document.onkeydown = function(e) {
+            if(e.keyCode == 39) {
+                pacman.x += 20;
+            }
+            else if(e.keyCode == 37) {
+                pacman.x -= 20;
+            }
+            else if(e.keyCode == 38) {
+                pacman.y -= 20;
+            }
+            else if(e.keyCode == 40) {
+                pacman.y += 20;
+            }
+            // console.log(e.keyCode);
+            displayPacman();
+        }
+
+    </script>
 </body>
-<script>
-    
-</script>
 </html>
