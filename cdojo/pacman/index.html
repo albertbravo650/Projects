@@ -35,6 +35,15 @@
             height: 20px;
             position: absolute;
         }
+        div#ghost {
+            background-image: url("ghost.png");
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: contain;
+            width: 20px;
+            height: 20px;
+            position: absolute;
+        }
         div#score {
             border: 2px solid white;
             height: 40px;
@@ -54,6 +63,7 @@
         <div class="container">
             <div id="world"></div>
             <div id="pacman" style="top: 20px; left: 20px;"></div>
+            <div id="ghost" style="top: 20px; left: 20px;"></div>
         </div>
         <div id="score">0</div>
     </div>
@@ -73,6 +83,11 @@
         var pacman = {
             x: 1,
             y: 1
+        };
+
+        var ghost = {
+            x: 7,
+            y: 6
         };
 
         var score = 0;
@@ -104,12 +119,18 @@
             document.getElementById('pacman').style.left = pacman.x*20+"px";
         }
 
+        function displayGhost() {
+            document.getElementById('ghost').style.top = ghost.y*20+"px";
+            document.getElementById('ghost').style.left = ghost.x*20+"px";
+        }
+
         function updateScore() {
             document.getElementById('score').innerHTML = score;
         }
 
         displayWorld();
         displayPacman();
+        displayGhost();
 
         document.onkeydown = function(e) {
             if(e.keyCode == 39 && world[pacman.y][pacman.x+1]!=2) {
