@@ -57,13 +57,13 @@
         }
     </style>
 </head>
-<body>
+<body onload="startGame()">
 
     <div class="gameboard">
         <div class="container">
             <div id="world"></div>
-            <div id="pacman" style="top: 20px; left: 20px;"></div>
-            <div id="ghost" style="top: 20px; left: 20px;"></div>
+            <div id="pacman"></div>
+            <div id="ghost"></div>
         </div>
         <div id="score">0</div>
     </div>
@@ -90,7 +90,19 @@
             y: 6
         };
 
+        var ghost2 = {
+            x: 8,
+            y: 6
+        };
+
         var score = 0;
+
+        // start game
+        function startGame() {
+            displayGhost();
+            displayPacman();
+            displayWorld();
+        }
 
         function displayWorld() {
             var output = '';
@@ -122,15 +134,12 @@
         function displayGhost() {
             document.getElementById('ghost').style.top = ghost.y*20+"px";
             document.getElementById('ghost').style.left = ghost.x*20+"px";
+            
         }
 
         function updateScore() {
             document.getElementById('score').innerHTML = score;
         }
-
-        displayWorld();
-        displayPacman();
-        displayGhost();
 
         document.onkeydown = function(e) {
             if(e.keyCode == 39 && world[pacman.y][pacman.x+1]!=2) {

@@ -1,0 +1,114 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: rgba(0, 128, 0, 0.362)
+}
+
+.topBar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px 10px 5px 10px;
+    background-color: black;
+}
+
+h1 {
+    color: white;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}
+
+.btn {
+    padding: 5px;
+}
+
+.main {
+    /* border: 2px solid red; */
+    height: 800px;
+    display: flex;
+}
+
+.leftside {
+    /* border: 2px solid yellow; */
+    flex: 1;
+    padding: 20px;
+}
+
+.topLeft {
+    display: flex;
+    align-items: center;
+}
+
+.userDetails {
+    text-align: center;
+}
+
+.userImg {
+    border-radius: 50%;
+}
+
+#edit_profile_button {
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.bottomLeft {
+    /* border: 2px solid green; */
+    background-color: white;
+    height: 70%;
+    border: solid 2px black;
+    box-shadow: 2px 2px 5px black;
+    padding: 5px;
+}
+
+.rightside {
+    /* border: 2px solid purple; */
+    flex: 3;
+    padding: 20px;
+}
+
+.commentForm, .topLeft {
+    border: solid 2px black;
+    box-shadow: 2px 2px 5px black;
+    background-color: rgba(0, 128, 0, 0.323);
+    padding: 5px;
+    margin-bottom: 10px;
+}
+
+.buttons {
+    margin-top: 14px;
+}
+
+.comments {
+    display: flex;
+    align-items: center;
+    margin-top: 15px;
+}
+
+.commenttext {
+    display: flex;
+    align-items: center;
+}
+
+.pcommenttext {
+    height: 10px;
+    font-size: large;
+    font-family: cursive;
+}
+
+.delete {
+    margin-left: 15px;
+}
+
+.bottomBar {
+    display: flex;
+    justify-content: center;
+}
+
+

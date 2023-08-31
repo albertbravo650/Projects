@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
+    <!-- <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='static/style.css') }}"> -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style2.css') }}">
+    <title>Profile Project</title>
+</head>
+<body>
+    <div class="topBar">
+        <button type="button" class="btn btn-info"><a href="/dashboard">Home</a></button>
+        <h1>Profile Website</h1>
+        <a href="/logout">Logout</a>
+    </div>
+    <div class="main">
+        <div class="leftside">
+            <div class="topLeft">
+                <div class="userDetails">
+                    <h3>{{user.firstName}} {{user.lastName}}</h3>
+                    <div class="profileImg">
+                        <img class="userImg" src="/static/assets/avatar.jpeg" alt="image_error" width="100" height="100">
+                    </div>
+                    <button id="edit_profile_button">edit profile</button>
+                </div>
+                <div class="bio">
+                    <p>This is your bio...</p>
+                </div>
+            </div>
+            <div class="bottomLeft">
+                <h3 style="text-align: center;">Following</h3>
+            </div>
+        </div>
+        <div class="rightside">
+            <div class="commentForm">
+                <form action="/addComment" method="post">
+                    {% with messages = get_flashed_messages(category_filter=['commentError']) %}
+                        {% if messages %}
+                            {% for message in messages %}
+                                <p>{{message}}</p>
+                            {% endfor %}
+                        {% endif %}
+                    {% endwith %}
+                    <label class="form-label" for="text">Comment:</label>
+                    <input class="form-control" type="text" name="text">
+                    <label class="form-label" for="textLink">Add a Link?</label>
+                    <input class="form-control" type="text" name="textLink">
+                    <div class="buttons">
+                        <input class="btn btn-success" type="submit" value="add comment">
+                    </div>
+                </form>
+            </div>
+            <div class="commentsBox">
+                {% for comment in all_comments %}
+                    {% if comment.text == None %}
+                        <div class="comments">
+                            
+                        </div>
+                    {% elif user.id == comment.user_id %}
+                        <div class="comments">
+                            <div class="commenttext"><p class="pcommenttext">{{comment.text}} {{comment.textLink}}</p></div>
+                            <a class="delete btn btn-danger" href="/destroy/{{comment.comment_id}}">delete</a>
+                        </div>
+                    {% elif user.id != comment.user_id %}
+                        <div class="comments">
+                            <div class="commenttext"><p class="pcommenttext">{{comment.text}} {{comment.textLink}}</p></div>
+                        </div>
+                    {% endif %}
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    <div class="bottomBar">
+        <a href="/">about</a>
+        <p>/</p>
+        <a href="/">help</a>
+        <p>/</p>
+        <a href="/">contact</a>
+        <p>/</p>
+        <a href="/">FAQ</a>
+    </div>
+</body>
+</html>
