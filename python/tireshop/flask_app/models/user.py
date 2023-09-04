@@ -9,16 +9,16 @@
 
 # mydb = 'profile_app'
 
-# class User:
-#     def __init__(self, data):
-#         self.id = data['id']
-#         self.firstName = data['firstName']
-#         self.lastName = data['lastName']
-#         self.email = data['email']
-#         self.password = data['password']
-#         self.createdAt = data['createdAt']
-#         self.updatedAt = data['updatedAt']
-#         self.allUsers = []
+class User:
+    def __init__(self, data):
+        self.id = data['id']
+        self.firstName = data['firstName']
+        self.lastName = data['lastName']
+        self.email = data['email']
+        self.password = data['password']
+        self.createdAt = data['createdAt']
+        self.updatedAt = data['updatedAt']
+        self.allUsers = []
 
 
 #     @classmethod
