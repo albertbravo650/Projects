@@ -43,6 +43,9 @@
             width: 20px;
             height: 20px;
             position: absolute;
+            transform: translate(-50%, -50%);
+            /* top: 50%;
+			left: 50%; */
         }
         div#score {
             border: 2px solid white;
@@ -55,6 +58,15 @@
         div.gameboard {
             display: flex;
         }
+        #enemy {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+			background-color: red;
+			width: 50px;
+			height: 50px;
+		}
     </style>
 </head>
 <body onload="startGame()">
@@ -64,6 +76,7 @@
             <div id="world"></div>
             <div id="pacman"></div>
             <div id="ghost"></div>
+            <!-- <div id="enemy"></div> -->
         </div>
         <div id="score">0</div>
     </div>
@@ -85,10 +98,11 @@
             y: 1
         };
 
-        var ghost = {
-            x: 7,
-            y: 6
-        };
+        var ghost = document.getElementById("ghost");
+        // var ghost = {
+        //     x: 7,
+        //     y: 6
+        // };
 
         var ghost2 = {
             x: 8,
@@ -96,6 +110,9 @@
         };
 
         var score = 0;
+
+        var enemy = document.getElementById("enemy");
+		var speed = 20;
 
         // start game
         function startGame() {
@@ -136,6 +153,21 @@
             document.getElementById('ghost').style.left = ghost.x*20+"px";
             
         }
+
+        setInterval(function() {
+			var x = Math.random() * window.innerWidth;
+			var y = Math.random() * window.innerHeight;
+
+			var dx = x - ghost.offsetLeft;
+			var dy = y - ghost.offsetTop;
+
+			var distance = Math.sqrt(dx * dx + dy * dy);
+
+			var time = distance / speed;
+
+			ghost.style.transition = "transform " + time + "s linear";
+			ghost.style.transform = "translate(" + x + "px, " + y + "px)";
+		}, 2000);
 
         function updateScore() {
             document.getElementById('score').innerHTML = score;
