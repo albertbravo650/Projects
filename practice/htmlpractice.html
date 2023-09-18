@@ -5,13 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="csspractice.css">
     <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro' rel='stylesheet' type='text/css'>
+    <script src="jspractice.js"></script>
     <title>Document</title>
 </head>
-<body>
+<body onload="bodyFunction()">
     <div class="border">
         <div class="mainBox">
             <h1>Hello</h1>
-            <button>Show Date and Time</button>
+            <button type="button" onclick="myFunction()">Show Date and Time</button>
+            <p id="dateTime"></p>
+            <button type="button" onclick="myFunction2()">Close Date and Time</button>
+            <button type="button" onclick="bodyFunction()">Change Background for 3 seconds</button>
         </div>
     </div>
 </body>

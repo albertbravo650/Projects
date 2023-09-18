@@ -1,5 +1,9 @@
+body {
+    background-color: rgb(41, 41, 41);
+}
+
 .border {
-    background-color: black;
+    background-color: rgb(26, 26, 26);
     margin: 25%;
     margin-top: 0;
     padding: 20px;
@@ -17,10 +21,15 @@
 h1 {
     color: #ffffff;
     font-family: 'Source Sans Pro', sans-serif;
-    font-weight: 400;
+    font-weight: 550;
 }
 
 button {
     margin-bottom: 20px;
     padding: 10px;
+}
+
+#dateTime {
+    color: #ffffff;
+    font-family: 'Source Sans Pro', sans-serif;
 }
