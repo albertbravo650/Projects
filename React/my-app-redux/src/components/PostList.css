@@ -1,0 +1,24 @@
+.post {
+    margin: 20px 20% 20px 20%;
+    list-style: none;
+    border: 1px solid black;
+    box-shadow: 2px 2px 5px black;
+    border-radius: 20px;
+    padding: 15px;
+    background-color: gray;
+    color: white;
+}
+
+.postTitle {
+    margin-bottom: 10px;
+    font-size: large;
+    font-weight: 700;
+}
+
+.postBody {
+    border: 1px solid black;
+    border-radius: 10px;
+    background-color: white;
+    color: black;
+    padding: 10px;
+}
