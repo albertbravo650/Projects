@@ -37,16 +37,41 @@
 
 // using the fs node module to read a file and path node module to resolve a path
 
+// const fs = require('fs');
+// const path = require('path');
+// const absolutePath = path.resolve('Projects/Node', 'file.txt');
+// console.log(absolutePath);
+
+// fs.readFile(absolutePath, 'utf-8', (err, data) => {
+//     if(err) {
+//         console.error(err);
+//         return;
+//     }
+
+//     console.log(data);
+// })
+
+
+// using the util node module with fs and path
+
+const util = require('util');
+
+const obj = {name: 'Albert', age: 27};
+const inspectResult = util.inspect(obj);
+console.log(inspectResult);
+
+const formattedString = util.format('Hello %s %s!', 'Albert', 'Bravo');
+console.log(formattedString);
+
 const fs = require('fs');
 const path = require('path');
+const readFileAsync = util.promisify(fs.readFile);
 const absolutePath = path.resolve('Projects/Node', 'file.txt');
-console.log(absolutePath);
 
-fs.readFile(absolutePath, 'utf-8', (err, data) => {
-    if(err) {
+readFileAsync(absolutePath, 'utf-8')
+    .then((data) => {
+        console.log(data);
+    })
+    .catch((err) => {
         console.error(err);
-        return;
-    }
-
-    console.log(data);
-})
+    })
