@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Satellite Monitoring</title>
+    <link rel="stylesheet" type="text/css" href="/index.css">
+</head>
+<body>
+    <div class="main">
+        <h1>Satellite Monitoring</h1>
+        <h2>Stats (last 5 minutes since app loaded)</h2>
+        <div class="stats">
+            <p id="min">Min: <%= stats.min %></p>
+            <p id="max">Max: <%= stats.max %></p>
+            <p id="average">Average: <%= stats.average %></p>
+        </div>
+        <a href="/stats"><button>Refresh</button></a>
+        <a href="/"><button>Go Back</button></a>
+    </div>
+</body>
+</html>
