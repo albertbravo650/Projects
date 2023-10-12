@@ -1,0 +1,2 @@
+Creating a Docker image using a Dockerfile involves defining the instructions and configurations for building the image in a 
+text file called a Dockerfile.
