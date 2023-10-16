@@ -1,2 +1,35 @@
 Creating a Docker image using a Dockerfile involves defining the instructions and configurations for building the image in a 
 text file called a Dockerfile.
+
+### push and pull docker image 
+
+$ docker tag <image-name> user_name/new_tag:latest
+
+$ docker push user_name/new_tag:latest
+
+$ docker pull <image_name>
+
+
+### build a new image and run to create a container 
+
+$ docker build -t <image_tag> .
+
+$ docker run -dp <port_mapping> <image_tag>
+
+
+### stop and remove a container and image 
+
+$ docker stop <container_id>
+
+$ docker rm <container_id>
+
+$ docker rmi <image_tag>
+
+
+### other commands
+
+$ docker ps
+
+$ docker ps -a 
+
+$ docker images
