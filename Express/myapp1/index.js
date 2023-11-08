@@ -4,7 +4,7 @@ const port = 3000;
 app.use(express.static('static'));
 
 app.get('/', (req, res) => {
-    res.send('Hello World!!!');
+    res.send('Hello World!');
     console.log('GET request');
 })
 
