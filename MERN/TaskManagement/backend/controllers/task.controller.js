@@ -7,7 +7,7 @@ module.exports.createTask = (req, res) => {
         description
     })
     .then(task => res.json(task))
-    .catch(err => res.status(400).json(err))
+    .catch(err => "hello error!",res.status(400).json(err))
 }
 
 module.exports.updateTask = (req, res) => {
