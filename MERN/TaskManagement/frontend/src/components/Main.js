@@ -2,9 +2,13 @@ import TaskForm from "./TaskForm";
 import TaskList from "./TaskList";
 import React, {useEffect, useState} from 'react';
 import axios from "axios";
+import './css/main.css'
+import { useNavigate } from "react-router-dom";
 
 const Main = (props) => {
     const [tasks, setTasks] = useState([]);
+    const [errors, setErrors] = useState([]);
+    const nav = useNavigate();
 
     useEffect(() => {
         axios.get('http://localhost:5000/api/tasks')
@@ -15,30 +19,48 @@ const Main = (props) => {
     }, [])
 
     const removeFromDom = taskID => {
+        console.log(taskID)
         axios.delete('http://localhost:5000/api/task/delete/' + taskID)
         .then(res => {
             console.log(res);
             setTasks(tasks.filter(task => task._id !== taskID));
         })
-        .catch(err => console.log(err))
+        .catch(err => console.log("axios delete err", err))
     }
 
     const createTask = newParam => {
+        console.log(newParam)
         axios.post('http://localhost:5000/api/task', newParam)
         .then(res => {
-            console.log(res);
+            console.log("post working", res);
             setTasks([...tasks, res.data]);
+            nav('/');
         })
-        .catch(err => console.log("hello errororor", err));
+        .catch(err => {
+            console.log("hello errororor", err);
+            const errorResponse = err.response.data.errors
+            const errorArr = []
+            for(const key of Object.keys(errorResponse)) {
+                errorArr.push(errorResponse[key].message)
+            }
+            setErrors(errorArr)
+        });
+
     }
 
     return(
-        <div>
-            <h1>Hello</h1>
-            <TaskForm tasks={tasks} setTasks={setTasks} onSubmitProp={createTask}
-            initialTitle="" initialDes=""/>
-            <hr/>
-            <TaskList tasks={tasks} setTasks={setTasks} removeFromDom={removeFromDom}/>
+        <div className="main">
+            <div className="top">
+                <h1>Task Management App</h1>
+                <h2>Add a Task</h2>
+                {errors.map((err, index) => <p key={index}>{err}</p>)}
+                <TaskForm tasks={tasks} setTasks={setTasks} onSubmitProp={createTask}
+                initialTitle="" initialDes=""/>
+            </div>
+            <div className="bottom">
+                <h2>All Tasks:</h2>
+                <TaskList tasks={tasks} setTasks={setTasks} removeFromDom={removeFromDom}/>
+            </div>
         </div>
     );
 }

@@ -1,0 +1,20 @@
+.main, .top, .bottom {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.top {
+    border: 1px solid black;
+    border-radius: 15px;
+    padding: 25px;
+    margin: 5px;
+    margin-top: 25px;
+    background-color: rgba(59, 190, 234, 0.473);
+    box-shadow: 2px 2px 5px black;
+}
+
+.bottom {
+    padding: 25px;
+    width: 50%;
+}

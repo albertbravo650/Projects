@@ -3,7 +3,7 @@ import React, {useState} from 'react'
 import '../App.css'
 
 const TaskForm = (props) => {
-    const {tasks, setTasks} = props
+    // const {tasks, setTasks} = props
     const {initialTitle, initialDes, onSubmitProp} = props
     const [title, setTitle] = useState(initialTitle)
     const [description, setDescription] = useState(initialDes)
@@ -40,4 +40,4 @@ const TaskForm = (props) => {
     )
 }
 
-export default TaskForm
+export default TaskForm;

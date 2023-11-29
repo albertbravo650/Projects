@@ -1,0 +1,27 @@
+.listTask {
+    border: 1px solid black;
+    border-radius: 10px;
+    padding: 25px;
+    margin: 10px 0 10px 0;
+    background-color: white;
+}
+
+h3, p, #task {
+    margin-bottom: 5px;
+}
+
+.topTask {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.checkBox {
+    margin-left: 25px;
+}
+
+.bottomTask {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}

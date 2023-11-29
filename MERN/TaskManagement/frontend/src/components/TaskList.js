@@ -3,6 +3,7 @@ import axios from 'axios'
 import '../App.css'
 import { Link } from 'react-router-dom'
 import DeleteButton from './DeleteButton'
+import './css/list.css'
 
 const TaskList = (props) => {
     const [tasks, setTasks] = useState([])
@@ -10,7 +11,7 @@ const TaskList = (props) => {
     useEffect(() => {
         axios.get('http://localhost:5000/api/tasks')
         .then((res) => {
-            console.log(res.data)
+            console.log("get working", res.data)
             setTasks(res.data)
         })
         .catch((err) => console.log(err))
@@ -22,16 +23,28 @@ const TaskList = (props) => {
 
     return(
         <div>
-            <h2>All Tasks:</h2>
             {
                 tasks.map((task, index) => {
+                    // console.log(task._id)
                     return(
                         <div key={index}>
                             <div className='listTask'>
-                                <Link to={`/task/${task._id}`}>{task.title}</Link>
+                                {/* <Link to={`/task/${task._id}`}>{task.title}</Link> */}
+                                <div className='topTask'>
+                                    <div>
+                                        <h3>{task.title}</h3>
+                                        <p>{task.description}</p>
+                                    </div>
+                                    <div className='checkBox'>
+                                        <input type='checkbox' name='task' id='task'></input>
+                                        <label htmlFor='task'>Completed</label>
+                                    </div>
+                                </div>
                                 <br/>
-                                <Link to={`/task/edit/${task._id}`}>Edit</Link>
-                                <DeleteButton taskID={task._id} successCallback={()=>removeFromDom(task._id)} />
+                                <div className='bottomTask'>
+                                    <Link to={`/task/edit/${task._id}`}>Edit</Link>
+                                    <DeleteButton taskID={task._id} successCallback={()=>removeFromDom(task._id)} />
+                                </div>
                             </div>
                         </div>
                     )
