@@ -1,9 +1,11 @@
-version: '3'
+version: '3.7'
 services:
   backend:
     build: ./backend
     ports:
       - '5000:5000'
+    environment:
+      MONGO_URI: 'mongodb://127.0.0.1:27017/taskdb' 
     depends_on:
       - database
 
@@ -18,3 +20,8 @@ services:
     image: mongo:latest
     ports:
       - '27017:27017'
+    volumes:
+      - mongo-data:/data/db
+
+volumes:
+  mongo-data:
