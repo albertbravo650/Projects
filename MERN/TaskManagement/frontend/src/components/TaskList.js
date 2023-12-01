@@ -28,7 +28,7 @@ const TaskList = (props) => {
                     tasks.map((task, index) => {
                         // console.log(task._id)
                         return(
-                            <div key={index}>
+                            <div className='listOfTasks' key={index}>
                                 <div className='listTask'>
                                     {/* <Link to={`/task/${task._id}`}>{task.title}</Link> */}
                                     <div className='topTask'>
@@ -37,7 +37,7 @@ const TaskList = (props) => {
                                             <p>{task.description}</p>
                                         </div>
                                         <div className='checkBox'>
-                                            <input type='checkbox' name='task' id='task'></input>
+                                            <input className='check' type='checkbox' name='task' id='task'></input>
                                             <label htmlFor='task'>Completed</label>
                                         </div>
                                     </div>

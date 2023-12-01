@@ -25,3 +25,14 @@ h3, p, #task {
     align-items: center;
     justify-content: space-between;
 }
+
+.checkBox {
+    display: flex;
+    align-items: center;
+}
+
+.check {
+    margin-top: 6px;
+    margin-right: 5px;
+    margin-left: 10px;
+}

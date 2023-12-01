@@ -1,6 +1,10 @@
 const mongoose = require('mongoose')
 
-mongoose.connect('mongodb://127.0.0.1:27017/taskdb', {
+// mongoose.connect('mongodb://127.0.0.1:27017/taskdb', {
+//     useNewUrlParser: true,
+//     useUnifiedTopology: true
+// })
+mongoose.connect('mongodb://database:27017/taskdb', {
     useNewUrlParser: true,
     useUnifiedTopology: true
 })
