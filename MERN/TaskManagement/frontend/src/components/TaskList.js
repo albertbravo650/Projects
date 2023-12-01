@@ -24,31 +24,35 @@ const TaskList = (props) => {
     return(
         <div>
             {
-                tasks.map((task, index) => {
-                    // console.log(task._id)
-                    return(
-                        <div key={index}>
-                            <div className='listTask'>
-                                {/* <Link to={`/task/${task._id}`}>{task.title}</Link> */}
-                                <div className='topTask'>
-                                    <div>
-                                        <h3>{task.title}</h3>
-                                        <p>{task.description}</p>
+                Array.isArray(tasks) && tasks.length > 0 ? (
+                    tasks.map((task, index) => {
+                        // console.log(task._id)
+                        return(
+                            <div key={index}>
+                                <div className='listTask'>
+                                    {/* <Link to={`/task/${task._id}`}>{task.title}</Link> */}
+                                    <div className='topTask'>
+                                        <div className='taskDetails'>
+                                            <h3>{task.title}</h3>
+                                            <p>{task.description}</p>
+                                        </div>
+                                        <div className='checkBox'>
+                                            <input type='checkbox' name='task' id='task'></input>
+                                            <label htmlFor='task'>Completed</label>
+                                        </div>
                                     </div>
-                                    <div className='checkBox'>
-                                        <input type='checkbox' name='task' id='task'></input>
-                                        <label htmlFor='task'>Completed</label>
+                                    <br/>
+                                    <div className='bottomTask'>
+                                        <Link to={`/task/edit/${task._id}`}>Edit</Link>
+                                        <DeleteButton taskID={task._id} successCallback={()=>removeFromDom(task._id)} />
                                     </div>
-                                </div>
-                                <br/>
-                                <div className='bottomTask'>
-                                    <Link to={`/task/edit/${task._id}`}>Edit</Link>
-                                    <DeleteButton taskID={task._id} successCallback={()=>removeFromDom(task._id)} />
                                 </div>
                             </div>
-                        </div>
-                    )
-                })
+                        )
+                    })
+                ) : (
+                    <p></p>
+                )
             }
         </div>
     )

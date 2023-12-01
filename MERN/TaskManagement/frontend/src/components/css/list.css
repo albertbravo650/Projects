@@ -16,8 +16,8 @@ h3, p, #task {
     justify-content: space-between;
 }
 
-.checkBox {
-    margin-left: 25px;
+.taskDetails {
+    width: 75%;
 }
 
 .bottomTask {
