@@ -29,6 +29,7 @@ h3, p, #task {
 .checkBox {
     display: flex;
     align-items: center;
+    /* color: blue; */
 }
 
 .check {
