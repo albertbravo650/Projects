@@ -22,10 +22,12 @@ let pokemon = document.getElementById("newList2");
 let url = "https://pokeapi.co/api/v2/pokemon";
 
 listButton2.addEventListener("click", () => {
-    let promise = fetch(url).then((res) => {
+    let promise = fetch(url)
+    .then((res) => {
     console.log("hellojdfdks", res);
-    return res.json()
-    }).then((data) => {
+    return res.json();
+    })
+    .then((data) => {
         console.log("testOffest", data.next);
         url = data.next;
         displayPokemon(data.results);
@@ -53,8 +55,6 @@ listButton2.addEventListener("click", () => {
 function displayPokemon(pokemonList) {
     // pokemon.innerHTML = "";
     for (let i = 0; i < pokemonList.length; i++) {
-
-        
 
         // create li
         let listItem = document.createElement("li");
