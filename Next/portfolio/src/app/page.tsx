@@ -22,7 +22,7 @@ export default function Home() {
         // hide image
         hidden
         ></Image> */}
-        <div id="three-d"><ThreeD></ThreeD></div>
+        {/* <div id="three-d"><ThreeD></ThreeD></div> */}
       </div>
       <Card>
         <h1 className="text-center mt-20 mb-10 text-4xl">Play Tic Tac Toe</h1>
