@@ -1,11 +1,12 @@
 import Image from "next/image";
 import './about.css';
+import styles from './about.module.css';
 import Card from '../components/Card/Card';
 // import LottieAnimation from '../components/LottieAnimation/LottieAnimation.js';
 
 export default function About() {
     return (
-        <div className='mid'>
+        <div className={`mid`}>
             <div className="hero-text">
                 <h1 className="text-4xl font-bold mt-4">About</h1>
             </div>

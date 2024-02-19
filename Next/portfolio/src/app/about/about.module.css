@@ -1,0 +1,17 @@
+/* about.module.css */
+
+.about-container {
+    background-image: url('./goldengate.jpg');
+    
+    /* Replace 'background-image.jpg' with the path to your background image */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    /* Ensure the background covers the entire viewport height */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* Set text color to white for contrast */
+    background-color: rgba(0, 0, 0, 0.9);
+}
