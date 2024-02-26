@@ -1,0 +1,17 @@
+.portCard {
+    display: flex;
+}
+
+.portImages {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.simpleTask {
+    margin: 5px;
+}
+
+.portButton:hover {
+    color: #37FF8B;
+}
