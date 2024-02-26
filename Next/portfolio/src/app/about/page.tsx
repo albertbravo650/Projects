@@ -30,7 +30,7 @@ export default function About() {
                     for me to even think about picking up and moving around. I played games such as minesweeper and solitaire, and taught 
                     myself how to install cd software so I can play 3D games such as Backyard Baseball and Magic School Bus games (yes, 
                     kind of nerdy, but I didn't care). I loved challenges and solving problems and even tried taking apart hardware to see 
-                    what was inside. I usually ended up getting in trouble but it was worth the curiosity.<br></br> I eventually got into 
+                    what was inside. I usually ended up getting in trouble but it was worth the curiosity.<br></br><br></br> I eventually got into 
                     software programming around high school when I was deciding what career path to take. Being that I was really into 
                     computers and tech, it was pretty easy for me to decide on software engineering. Math and science were my favorite 
                     subjects growing up, but I pretty much developed an interest in everything from astronomy, to history, and especially 
@@ -53,8 +53,9 @@ export default function About() {
                     Git, GitHub
                 </p>
                 <h1 className='text-center mt-20 mb-10 text-4xl'>Education</h1>
+                <p className="text-center">De Anza college graduate - Match, Science and Engineering</p>
                 <h1 className='text-center mt-20 mb-10 text-4xl'>Interests/Hobbies</h1>
-                <p>Sports, music, videogames, traveling</p>
+                <p className="text-center">Sports, music, videogames, traveling</p>
             </Card>
         </div>
     )
