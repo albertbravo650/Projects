@@ -1,19 +1,45 @@
 "use client"
 import "./tictactoe.css";
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 const TicTacToe = () => {
     const [board, setBoard] = useState(Array(9).fill(null));
     const [xIsNext, setXIsNext] = useState(true);
     const [winner, setWinner] = useState(null);
 
+    const getBestMove = (currentBoard, isMaximizing) => {
+        // Implementation of AI move logic
+        // You can use minimax algorithm or any other AI strategy here
+        // For simplicity, let's choose the first available empty square
+        for (let i = 0; i < currentBoard.length; i++) {
+            if (currentBoard[i] === null) {
+                return i;
+            }
+        }
+        return -1; // No available move
+    };
+
+    useEffect(() => {
+        if (!xIsNext && winner!=='X') {
+            // AI's move
+            const aiMove = getBestMove(board, !xIsNext);
+            if (aiMove !== -1) {
+                const newBoard = [...board];
+                newBoard[aiMove] = 'O';
+                setBoard(newBoard);
+                setXIsNext(true);
+                calculateWinner(newBoard);
+            }
+        }
+    }, [board, xIsNext]);
+
     const handleClick = (index) => {
         if (winner || board[index]) return;
         const newBoard = [...board];
-        newBoard[index] = xIsNext ? 'X' : 'O';
+        newBoard[index] = 'X';
         setBoard(newBoard);
-        setXIsNext(!xIsNext);
+        setXIsNext(false);
         calculateWinner(newBoard);
     };
 
