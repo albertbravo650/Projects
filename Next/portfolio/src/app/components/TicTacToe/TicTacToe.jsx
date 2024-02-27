@@ -66,7 +66,9 @@ const TicTacToe = () => {
             {winner && (
                 <div className="winner">
                     {winner === 'Draw' ? 'It\'s a Draw!' : `Winner: ${winner}`}
-                    <button onClick={resetGame}>Reset Game</button>
+                    <div>
+                        <button className="reset-button" onClick={resetGame}>Reset Game</button>
+                    </div>
                 </div>
             )}
         </div>
