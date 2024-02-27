@@ -17,13 +17,13 @@
     width: 100px;
     height: 100px;
     font-size: 2em;
-    background-color: #eee;
+    background-color: black;
     border: 2px solid #fff;
     cursor: pointer;
 }
 
 .square:hover {
-    background-color: #ccc;
+    background-color: #45a049;
 }
 
 .status {
@@ -43,4 +43,9 @@
 
 .reset-button:hover {
     background-color: #45a049;
+}
+
+.winner {
+    margin-top: 10px;
+    text-align: center;
 }
