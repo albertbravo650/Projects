@@ -103,4 +103,5 @@
 
 let a = {x: 20, y: 50};
 let b = Object.create(a);
+// b.x = 30;
 console.log(b.x);
