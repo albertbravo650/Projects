@@ -1,4 +1,4 @@
-// const obj1 = {name: "Albert Bravo", age: 27};;
+// const obj1 = {name: "Albert Bravo", age: 27};
 
 // console.log(obj1.age);
 
@@ -105,3 +105,7 @@ let a = {x: 20, y: 50};
 let b = Object.create(a);
 // b.x = 30;
 console.log(b.x);
+
+// useEffect(() => {
+//   console.log("Hello")
+// }, []);
