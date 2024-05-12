@@ -101,11 +101,19 @@
 
 // console.log(multiplyNumeric(menu));
 
-let a = {x: 20, y: 50};
-let b = Object.create(a);
-// b.x = 30;
-console.log(b.x);
+// let a = {x: 20, y: 50};
+// let b = Object.create(a);
+// // b.x = 30;
+// console.log(b.x);
+// b.z = 1;
+// console.log(b.z);
 
 // useEffect(() => {
 //   console.log("Hello")
+//   alert("Hello");
 // }, []);
+
+let arr1 = ["10", "2", "9", 5];
+console.log(arr1[0] / arr1[1]);
+console.log(arr1[0] / arr1[3]);
+console.log(arr1[2] * arr1[3]);
