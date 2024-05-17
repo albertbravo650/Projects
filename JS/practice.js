@@ -125,3 +125,5 @@ z = Number(x);
 let y = + x;
 console.log(typeof(x));
 console.log(typeof(y));
+
+let arr = ["list", "racecar", "mom", "robot", "tree", "bob", "one"]
