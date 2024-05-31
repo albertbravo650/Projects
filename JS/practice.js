@@ -119,12 +119,12 @@
 // console.log(arr1[0] / arr1[3]);
 // console.log(arr1[2] * arr1[3]);
 
-// let x = "400.75";
-// console.log(typeof(x));
-// z = Number(x);
-// let y = + x;
-// console.log(typeof(x));
-// console.log(typeof(y));
+let x = "400.75";
+console.log(typeof(x));
+z = Number(x);
+let y = + x;
+console.log(typeof(x));
+console.log(typeof(y));
 
 let arr = ["list", "racecar", "mom", "robot", "tree", "bob", "one"]
 console.log(arr[3]);
