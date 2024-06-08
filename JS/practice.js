@@ -133,12 +133,26 @@ let display = (param1) => {
   console.log(param1);
 }
 
-let obj1 = {
-  name: "Bravo",
-  age: "28",
-  height: "6ft",
-  4: "four"
-}
+// let obj1 = {
+//   name: "Bravo",
+//   age: "28",
+//   height: "6ft",
+//   4: "four"
+// }
 
-console.log(obj1);
-display(obj1["name"])
+// console.log(obj1);
+// display(obj1["name"])
+
+let map = new Map();
+map.set('banana', 1);
+map.set('apple', 2);
+map.set('orange', 3);
+map.set(4, 'four');
+
+let obj = Object.fromEntries(map.entries());
+
+display(obj);
+display(map);
+
+let set = new Set(["banana", "orange", "kiwi", "orange", "strawberry", 1996]);
+display(set);
