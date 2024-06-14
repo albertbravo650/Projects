@@ -133,15 +133,15 @@ let display = (param1) => {
   console.log(param1);
 }
 
-// let obj1 = {
-//   name: "Bravo",
-//   age: "28",
-//   height: "6ft",
-//   4: "four"
-// }
+let obj1 = {
+  name: "Bravo",
+  age: "28",
+  height: "6ft",
+  4: "four"
+}
 
-// console.log(obj1);
-// display(obj1["name"])
+console.log(obj1);
+display(obj1["name"])
 
 let map = new Map();
 map.set('banana', 1);
