@@ -137,7 +137,8 @@ let obj1 = {
   name: "Bravo",
   age: "28",
   height: "6ft",
-  4: "four"
+  4: "four",
+  four: 4
 }
 
 console.log(obj1);
