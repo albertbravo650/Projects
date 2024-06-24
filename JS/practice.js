@@ -156,4 +156,4 @@ display(obj);
 display(map);
 
 let set = new Set(["banana", "orange", "kiwi", "orange", "strawberry", 1996]);
-display(set);
+// display(set);
