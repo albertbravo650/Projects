@@ -131,7 +131,7 @@
 
 let display = (param1) => {
   console.log(param1);
-}
+};
 
 let obj1 = {
   name: "Bravo",
@@ -139,10 +139,10 @@ let obj1 = {
   height: "6ft",
   4: "four",
   four: 4
-}
+};
 
 console.log(obj1);
-display(obj1["name"])
+display(obj1["name"]);
 
 let map = new Map();
 map.set('banana', 1);
@@ -158,6 +158,6 @@ display(map);
 let set = new Set(["banana", "orange", "kiwi", "orange", "strawberry", 1996]);
 display(set);
 
-map.forEach((value, key) => {
-  console.log(`key: ${key}, value: ${value}`);
-});
+// map.forEach((value, key) => {
+//   console.log(`key: ${key}, value: ${value}`);
+// });
