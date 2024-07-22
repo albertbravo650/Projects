@@ -159,5 +159,5 @@ let set = new Set(["banana", "orange", "kiwi", "orange", "strawberry", 1996]);
 display(set);
 
 map.forEach((value, key) => {
-  console.log(`key: ${key}, value: ${value}`);
+  console.log(`KEY: ${key}, VALUE: ${value}`);
 });
