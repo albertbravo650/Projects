@@ -23,11 +23,11 @@ export default function Button(props) {
     function handleClick() {
         alert('You clicked a styled button!');
         console.log("You pressed the styled button")
-    }
+    };
 
     return (
         <StyledButton onClick={handleClick}>
             {props.children}
         </StyledButton>
-    )
-}
+    );
+};

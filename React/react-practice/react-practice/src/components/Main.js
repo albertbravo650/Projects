@@ -9,6 +9,7 @@ const url = "https://pokeapi.co/api/v2/pokemon"
 // using props
 function NextButton(props) {
     function handleClick() {
+        alert('Hello!');
         alert('You clicked a button using props!');
         console.log("You pressed the props button");
     }
@@ -103,7 +104,7 @@ export default function Main() {
                 <Button>This is a Styled Button</Button>
             </div>
             <div>
-                <NextButton text={"This is another button using props"}></NextButton>
+                <NextButton text={"This is a button using props!"}></NextButton>
             </div>
             <div>
                 <Counter>Click Me!</Counter>
