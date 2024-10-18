@@ -155,9 +155,9 @@ let obj = Object.fromEntries(map.entries());
 display(obj);
 display(map);
 
-let set = new Set(["banana", "orange", "kiwi", "orange", "strawberry", 1996]);
+let set = new Set(["banana", "apple", "orange", "kiwi", "orange", "strawberry", 1996]);
 display(set);
 
-// map.forEach((value, key) => {
-//   console.log(`KEY: ${key}, VALUE: ${value}`);
-// });
+map.forEach((value, key) => {
+  console.log(`KEY: ${key}, VALUE: ${value}`);
+});
