@@ -15,5 +15,5 @@
 let fName = Symbol('First Name');
 let lName = Symbol('Last Name');
 
-console.log(fName);
+console.log(fName.description);
 console.log(lName);
