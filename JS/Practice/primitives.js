@@ -12,10 +12,22 @@
 // let testBool = !!false;
 // console.log(testBool);
 
-let fName = Symbol('First Name');
-let fName2 = Symbol('First Name');
-let lName = Symbol('Last Name');
+// let fName = Symbol('First Name');
+// let fName2 = Symbol('First Name');
+// let lName = Symbol('Last Name');
 
-console.log(fName.description);
-console.log(lName);
-console.log(fName===fName2);
+// console.log(fName.description);
+// console.log(lName);
+// console.log(fName===fName2);
+// console.log(typeof fName);
+
+let list = {
+    0: "Albert",
+    1: "Bravo",
+    length: 2,
+    [Symbol.isConcatSpreadable]: true
+}
+
+let message = ["Hello"].concat(list);
+
+console.log(message);
