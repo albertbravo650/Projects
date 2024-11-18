@@ -25,7 +25,7 @@ let list = {
     0: "Albert",
     1: "Bravo",
     length: 2,
-    [Symbol.isConcatSpreadable]: true
+    [Symbol.isConcatSpreadable]: false
 }
 
 let message = ["Hello"].concat(list);
