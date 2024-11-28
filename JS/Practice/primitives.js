@@ -30,4 +30,4 @@ let list = {
 
 let message = ["Hello"].concat(list);
 
-// console.log(message);
+console.log(message);
