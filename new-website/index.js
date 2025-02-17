@@ -57,6 +57,7 @@ function displayPokemon(pokemonList) {
     for (let i = 0; i < pokemonList.length; i++) {
 
         // create li
+        // let listDiv = document.createElement("div");
         let listItem = document.createElement("li");
         let listImg = document.createElement("img");
         // console.log("testURL", pokemonList[i].url);
@@ -65,7 +66,7 @@ function displayPokemon(pokemonList) {
             console.log("helloNOW", res2);
             return res2.json()
             }).then((data) => {
-                console.log("testRES2", data.results);
+                //console.log("testRES2", data.results);
                 url = data.next;
                 // console.log("test", pokemonList[i].url)
                 // set li content
@@ -73,8 +74,8 @@ function displayPokemon(pokemonList) {
                 listImg.src = data.sprites.front_default;
                 listImg.alt = pokemonList[i].name;
                 // append li to the DOM
-                pokemon.append(listItem);
-                pokemon.append(listImg);
+                pokemon.append(listItem, listImg);
+                // pokemon.append(listImg);
             })
         
     }
